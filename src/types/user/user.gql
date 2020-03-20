@@ -1,0 +1,9 @@
+type Query {
+    """
+    This is just a test schema
+    """
+    test:Boolean
+}
+type Mutation{
+    test:Boolean
+}

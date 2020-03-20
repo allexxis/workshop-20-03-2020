@@ -9,7 +9,7 @@ const test = async()=>{
         process.exit(1)
     })
     if(user){
-        console.log(user) 
+        console.log(user.dataValues) 
     }else{
         console.log('User not found')
     }

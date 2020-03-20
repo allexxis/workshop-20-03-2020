@@ -1,0 +1,39 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "Backend with mysql",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "apollo-server-express": "^2.11.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mysql2": "^2.1.0",
+    "node-cache": "^5.1.0",
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "DB_DATABASE='blog' DB_USERNAME='root' DB_PASSWORD='dublin' DB_HOST='bananacode.co' DB_DIALECT='mysql' DB_PORT='32779'  node test/index.js",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allexxis/workshop-20-03-2020.git"
+  },
+  "keywords": [
+    "mysql",
+    "grphql",
+    "apollo"
+  ],
+  "author": "Alexis Valenciano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allexxis/workshop-20-03-2020/issues"
+  },
+  "homepage": "https://github.com/allexxis/workshop-20-03-2020#readme"
+}
