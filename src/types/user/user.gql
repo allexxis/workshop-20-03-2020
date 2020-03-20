@@ -9,9 +9,17 @@ type User{
     email:String!
     name:String!
 }
+type Token {
+    token:String
+}
+type Login {
+    User:User,
+    Token:Token
+}
+
 type Mutation{
     """
     Login user
     """
-    login(email:String!,password:String!):User
+    login(email:String!,password:String!):Login
 }
