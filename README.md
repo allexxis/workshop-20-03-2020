@@ -42,7 +42,7 @@ $ DB_DATABASE=['database'] DB_USERNAME=['root'] DB_PASSWORD=['yourpassword']  DB
 * [x] Apollo server configuration
 * [x] Create User schema
 * [x] Create User resolver
-* [ ] Create login mutation
+* [x] Create login mutation
 * [ ] Create register resolver
 * [ ] Create register mutation
 * [ ] Create register resolver

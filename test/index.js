@@ -1,4 +1,5 @@
 const {User} = require('../src/db');
+const {hash} = require('../src/lib/hash');
 const test = async()=>{
     const user = await User.findOne({
         // where:{
@@ -13,7 +14,10 @@ const test = async()=>{
     }else{
         console.log('User not found')
     }
+    console.log(hash(user.dataValues.password))
     process.exit(0)
+
+    
 }
 test()
 module.exports={test}

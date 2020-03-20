@@ -1,6 +1,8 @@
 const jsonwebtoken = require('jsonwebtoken');
 const {AuthenticationError,ApolloError} =require('apollo-server')
 const  {User}  = require('../../db');
+const {hashCompare} =require('../../lib/hash');
+const {SECRET} = require('../../config/auth');
 const test =(_,args,ctx)=>{
     console.log(ctx)
     return true
@@ -12,20 +14,25 @@ const login =async(_,{email,password},ctx)=>{
         }
     }).catch(err=>{
         console.err(err)
-        throw new ApolloError('Uknown error')
+        throw new ApolloError('Database error')
     })
     if(!user){
         throw new AuthenticationError('User doesnt exist' ) 
     }
-    const valid = password === user.dataValues.password;
+    const valid = hashCompare(password,user.dataValues.password)
     if(!valid){
         throw new AuthenticationError('Email or password incorrect' ) 
     }
+    const token = jsonwebtoken.sign({ id: user.dataValues.id },SECRET,{ expiresIn: "2h" });
+
     return {
         User:{
             email:user.dataValues.email,
             id:user.dataValues.id,
             name:user.dataValues.name
+        },
+        Token:{
+            token
         }
     }
 }

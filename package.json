@@ -19,7 +19,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "DB_DATABASE='blog' DB_USERNAME='root' DB_PASSWORD='dublin' DB_HOST='bananacode.co' DB_DIALECT='mysql' DB_PORT='32779'  node test/index.js",
-    "start": "DB_DATABASE='blog' DB_USERNAME='root' DB_PASSWORD='dublin' DB_HOST='bananacode.co' DB_DIALECT='mysql' DB_PORT='32779' node index.js"
+    "start": "SECRET='hello' DB_DATABASE='blog' DB_USERNAME='root' DB_PASSWORD='dublin' DB_HOST='bananacode.co' DB_DIALECT='mysql' DB_PORT='32779' node index.js"
   },
   "repository": {
     "type": "git",
