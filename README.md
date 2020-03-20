@@ -33,15 +33,15 @@ $ DB_DATABASE=['database'] DB_USERNAME=['root'] DB_PASSWORD=['yourpassword']  DB
 
 ## Tasks
 #### First sprint
-* [ ] Run configuration  
-* [ ] Install packages
-* [ ] Configure database run script
-* [ ] Run test to test database  
-* [ ] Analyze project structure  
-* [ ] Express server configuration
-* [ ] Apollo server configuration
-* [ ] Create User schema
-* [ ] Create User resolver
+* [x] Run configuration  
+* [x] Install packages
+* [x] Configure database run script
+* [x] Run test to test database  
+* [x] Analyze project structure  
+* [x] Express server configuration
+* [x] Apollo server configuration
+* [x] Create User schema
+* [x] Create User resolver
 * [ ] Create login mutation
 * [ ] Create register resolver
 * [ ] Create register mutation

@@ -4,6 +4,14 @@ type Query {
     """
     test:Boolean
 }
+type User{
+    id:String!
+    email:String!
+    name:String!
+}
 type Mutation{
-    test:Boolean
+    """
+    Login user
+    """
+    login(email:String!,password:String!):User
 }
