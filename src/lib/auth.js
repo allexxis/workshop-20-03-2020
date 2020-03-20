@@ -1,7 +1,10 @@
-const jsonwebtoken = require('jsonwebtoken') 
+const jsonwebtoken = require('jsonwebtoken');
+const {SECRET} = require('../config/auth');
+const {User} = require('../db');
+const {ApolloError} = require('apollo-server');
 const decode = (value) => {
     try {
-        return jsonwebtoken.verify(value, secret);
+        return jsonwebtoken.verify(value, SECRET);
     } catch (error) {
         return null;
     }
@@ -14,12 +17,21 @@ const authenticate = async (req, res) => {
     }
 
     let tokenContent = decode(token);
-
-    let user = null;
-
     if(!tokenContent) {
-       return ;
+        return ;
+     }
+    let user = await User.findOne({
+        where:{
+            id:tokenContent.id
+        }
+    }).catch(err=>{
+        throw new ApolloError('Error on database')
+    });
+    if(!user){
+        throw new ApolloError('User doesnt exist')
     }
-    return user;
+    
+    
+    return user.dataValues;
 }
 module.exports={authenticate}

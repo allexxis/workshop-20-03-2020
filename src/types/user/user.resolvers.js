@@ -36,9 +36,21 @@ const login =async(_,{email,password},ctx)=>{
         }
     }
 }
+const me = async(_,args,ctx)=>{
+    console.log(ctx)
+    if(!ctx.user){
+        throw new AuthenticationError('User dont have a token')
+    }
+    return {
+        email:ctx.user.email,
+        id:ctx.user.id,
+        name:ctx.user.name
+    }
+}
 module.exports={
     Query:{
-        test
+        test,
+        me 
     },
     Mutation:{
         login

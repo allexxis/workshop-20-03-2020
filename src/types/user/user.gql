@@ -1,9 +1,4 @@
-type Query {
-    """
-    This is just a test schema
-    """
-    test:Boolean
-}
+
 type User{
     id:String!
     email:String!
@@ -16,7 +11,16 @@ type Login {
     User:User,
     Token:Token
 }
-
+type Query {
+    """
+    This is just a test schema
+    """
+    test:Boolean
+    """
+    Get my information using the token
+    """
+    me:User
+}
 type Mutation{
     """
     Login user
